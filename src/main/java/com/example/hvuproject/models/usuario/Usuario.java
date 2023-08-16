@@ -1,8 +1,7 @@
-package com.example.hvuproject.models;
+package com.example.hvuproject.models.usuario;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +18,8 @@ public class Usuario {
     private String senha;
     @Column(nullable = false, unique = true)
     private String cpf;
+
+    private UserRole userRole;
 
 
     public Long getId() {
