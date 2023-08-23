@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 @Service
@@ -39,5 +40,11 @@ public class UsuarioService {
         logger.info("Buscando por email");
 
         return usuarioRepository.existsByEmail(email);
+    }
+
+    public List<Usuario> listarTodos() {
+        logger.info("Listando todos usuários");
+
+        return usuarioRepository.findAll();
     }
 }
