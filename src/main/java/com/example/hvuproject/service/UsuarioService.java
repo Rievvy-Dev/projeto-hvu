@@ -25,7 +25,7 @@ public class UsuarioService {
     }
 
     @Transactional
-    public void deletar (Usuario usuario) {
+    public void delete (Usuario usuario) {
         logger.info("Deletando usuário");
 
         usuarioRepository.delete(usuario);
@@ -50,6 +50,7 @@ public class UsuarioService {
     }
 
     public Optional<Usuario> findById(Long id) {
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
         return usuarioRepository.findById(id);
     }
 }
