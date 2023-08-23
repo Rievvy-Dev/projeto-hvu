@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Service
@@ -42,9 +43,13 @@ public class UsuarioService {
         return usuarioRepository.existsByEmail(email);
     }
 
-    public List<Usuario> listarTodos() {
+    public List<Usuario> findAll() {
         logger.info("Listando todos usuários");
 
         return usuarioRepository.findAll();
+    }
+
+    public Optional<Usuario> findById(Long id) {
+        return usuarioRepository.findById(id);
     }
 }
