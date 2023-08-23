@@ -19,7 +19,7 @@ public class Usuario {
     @Column(nullable = false, unique = true)
     private String cpf;
 
-    private UserRole userRole;
+    //private UserRole userRole;
 
 
     public Long getId() {
