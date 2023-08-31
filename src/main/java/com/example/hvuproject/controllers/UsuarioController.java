@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuario")
@@ -36,5 +36,33 @@ public class UsuarioController {
         BeanUtils.copyProperties(usuarioDTO, usuarioModel);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.salvar(usuarioModel));
+    }
+    @GetMapping
+    public ResponseEntity<List<Usuario>> findAll() {
+        return ResponseEntity.status(HttpStatus.OK).body(usuarioService.findAll());
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> findUser(@PathVariable(value = "id") Long id) {
+        Optional<Usuario> usuarioModelOptional = usuarioService.findById(id);
+        if(!usuarioModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario não encontrado");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(usuarioModelOptional.get());
+    }
+//    @GetMapping
+//    public ResponseEntity<Usuario> findUser(Optional<Long> id, Optional<String> cpf) {
+//        if(id.isPresent()) {
+//            return ResponseEntity.status(HttpStatus.OK).body(usuarioService.findById(id));
+//        } else if ()
+//        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario não encontrado");
+//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> delete(@PathVariable(value = "id") Long id) {
+        Optional<Usuario> usuarioOptional = usuarioService.findById((id));
+        if(!usuarioOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuaruio não encontrado");
+        }
+        usuarioService.delete(usuarioOptional.get());
+        return ResponseEntity.status(HttpStatus.OK).body("Usuario deletado com sucesso");
     }
 }

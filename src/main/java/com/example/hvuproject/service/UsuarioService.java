@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Service
@@ -23,7 +25,7 @@ public class UsuarioService {
     }
 
     @Transactional
-    public void deletar (Usuario usuario) {
+    public void delete (Usuario usuario) {
         logger.info("Deletando usuário");
 
         usuarioRepository.delete(usuario);
@@ -39,5 +41,16 @@ public class UsuarioService {
         logger.info("Buscando por email");
 
         return usuarioRepository.existsByEmail(email);
+    }
+
+    public List<Usuario> findAll() {
+        logger.info("Listando todos usuários");
+
+        return usuarioRepository.findAll();
+    }
+
+    public Optional<Usuario> findById(Long id) {
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
+        return usuarioRepository.findById(id);
     }
 }
