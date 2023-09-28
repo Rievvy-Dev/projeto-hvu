@@ -1,5 +1,6 @@
 package br.ufape.lmts.hvu.model;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import jakarta.persistence.*;
 import java.math.*;

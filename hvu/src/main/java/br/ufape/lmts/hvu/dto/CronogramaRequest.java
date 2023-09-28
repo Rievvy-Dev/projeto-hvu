@@ -3,11 +3,12 @@ package br.ufape.lmts.hvu.dto;
 import java.util.*;
 import java.math.*;
 import br.ufape.lmts.hvu.model.*;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 
 
 public  class CronogramaRequest  {
 	private String nome;
-	private Json rotina;
+	private JSONPObject rotina;
 	private List<MedicoRequest> medico; 
 
 
@@ -33,7 +34,7 @@ public  class CronogramaRequest  {
 		return this.nome;
 	}
 
-	public 	Json getRotina () {
+	public 	JSONPObject getRotina () {
 		return this.rotina;
 	}
 
