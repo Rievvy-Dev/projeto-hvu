@@ -19,6 +19,11 @@ import br.ufape.lmts.hvu.dto.*;
 public class AnimalController {
 	@Autowired
 	private Facade facade;
+
+	@GetMapping("hello")
+	public String hello() {
+		return "Hello world";
+	}
 	
 	@GetMapping("animal")
 	public List<AnimalResponse> getAllAnimal() {

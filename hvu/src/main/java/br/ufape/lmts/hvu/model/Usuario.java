@@ -1,13 +1,17 @@
 package br.ufape.lmts.hvu.model;
 
+import java.io.Serializable;
 import java.util.*;
 import jakarta.persistence.*;
 import java.math.*;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public  class Usuario  {
+@Table(name = "Usuario")
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@Inheritance(strategy = InheritanceType.JOINED)
+//@MappedSuperclass
+public class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -19,7 +23,16 @@ public  class Usuario  {
 	@OneToOne(cascade = CascadeType.ALL,
 		orphanRemoval = true		
 	)
-	private Endereco endereco; 
+	private Endereco endereco;
+
+//	public Usuario(String email, String cpf, String senha, String telefone, String nome, Endereco endereco) {
+//		this.email = email;
+//		this.cpf = cpf;
+//		this.senha = senha;
+//		this.telefone = telefone;
+//		this.nome = nome;
+//		this.endereco = endereco;
+//	}
 
 	public Usuario () {
 		super();
