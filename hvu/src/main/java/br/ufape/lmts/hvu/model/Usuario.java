@@ -9,7 +9,7 @@ import java.math.*;
 @Entity
 @Table(name = "Usuario")
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-//@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 //@MappedSuperclass
 public class Usuario implements Serializable {
 	@Id
