@@ -2,9 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Projeto de Agendamento do Hospital Universitário Veterinário da UFAPE</title>
 </head>
 <body>
+
+<h1>Projeto de Agendamento do Hospital Universitário Veterinário da UFAPE</h1>
 
 <h2>Visão Geral</h2>
 
