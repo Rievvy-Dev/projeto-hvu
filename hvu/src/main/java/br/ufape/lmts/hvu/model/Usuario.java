@@ -7,7 +7,8 @@ import java.math.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public  class Usuario  {
+//@MappedSuperclass
+public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;

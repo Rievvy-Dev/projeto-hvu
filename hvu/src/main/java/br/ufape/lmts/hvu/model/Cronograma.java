@@ -1,10 +1,8 @@
 package br.ufape.lmts.hvu.model;
 
-import java.util.*;
-
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import jakarta.persistence.*;
-import java.math.*;
+
+import java.util.List;
 
 
 @Entity
@@ -14,7 +12,7 @@ public  class Cronograma  {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String nome;
-	private JSONPObject rotina;
+	private String rotina;
 	@OneToMany
 	@JoinColumn(name = "cronograma_id")
 	private List<Medico> medico; 
@@ -38,11 +36,11 @@ public  class Cronograma  {
 		this.nome = nome;
 	}
 	
-	public 	JSONPObject getRotina () {
+	public 	String getRotina () {
 		return this.rotina;
 	}
 	
-	public void setRotina (JSONPObject rotina) {
+	public void setRotina (String rotina) {
 		this.rotina = rotina;
 	}
 	

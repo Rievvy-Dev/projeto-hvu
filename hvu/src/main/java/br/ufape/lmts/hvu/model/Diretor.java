@@ -1,9 +1,6 @@
 package br.ufape.lmts.hvu.model;
 
-import java.util.*;
-import jakarta.persistence.*;
-import java.math.*;
-
+import jakarta.persistence.Entity;
 
 @Entity
 public  class Diretor extends Usuario {

@@ -1,12 +1,11 @@
 package br.ufape.lmts.hvu.model;
 
-import java.util.*;
-import jakarta.persistence.*;
-import java.math.*;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
 @Entity
 public  class Medico extends Usuario {
+	@Column
 	private String crmv;
 
 	public Medico () {

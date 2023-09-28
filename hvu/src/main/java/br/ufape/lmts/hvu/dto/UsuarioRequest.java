@@ -5,7 +5,7 @@ import java.math.*;
 import br.ufape.lmts.hvu.model.*;
 
 
-public  class UsuarioRequest  {
+public class UsuarioRequest  {
 	private String email;
 	private String cpf;
 	private String senha;

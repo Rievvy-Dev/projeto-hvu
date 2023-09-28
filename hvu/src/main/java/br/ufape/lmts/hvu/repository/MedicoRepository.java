@@ -10,6 +10,4 @@ import br.ufape.lmts.hvu.model.Medico;
 @Repository
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
 
-	
-
 }
