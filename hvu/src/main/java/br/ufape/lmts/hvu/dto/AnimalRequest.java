@@ -1,8 +1,9 @@
 package br.ufape.lmts.hvu.dto;
 
-import java.util.*;
-import java.math.*;
-import br.ufape.lmts.hvu.model.*;
+import br.ufape.lmts.hvu.model.Animal;
+
+import java.time.LocalDate;
+import java.util.List;
 
 
 public  class AnimalRequest  {

@@ -1,8 +1,9 @@
 package br.ufape.lmts.hvu.model;
 
-import java.util.*;
 import jakarta.persistence.*;
-import java.math.*;
+
+import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -59,7 +60,7 @@ public  class Animal  {
 		this.alergias = alergias;
 	}
 	
-	public 	LocalDate getDataNascimento () {
+	public LocalDate getDataNascimento () {
 		return this.dataNascimento;
 	}
 	

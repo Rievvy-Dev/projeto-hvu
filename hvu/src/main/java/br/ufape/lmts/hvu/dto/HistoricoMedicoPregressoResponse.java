@@ -1,5 +1,6 @@
 package br.ufape.lmts.hvu.dto;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.math.*;
 import br.ufape.lmts.hvu.model.*;
