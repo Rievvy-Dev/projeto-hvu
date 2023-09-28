@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Projeto de Agendamento do Hospital Universitário Veterinário da UFAPE</h1>
+<h1>Projeto de Agendamento do Hospital Veterinário Universitário da UFAPE</h1>
 
 <h2>Visão Geral</h2>
 
@@ -49,7 +49,7 @@
 
 <hr>
 
-<p>Este repositório contém o código-fonte e a documentação relacionada ao projeto de agendamento do Hospital Universitário Veterinário da UFAPE. 
+<p>Este repositório contém o código-fonte e a documentação relacionada ao projeto de agendamento do Hospital Veterinário Universitário da UFAPE. 
   Para contribuir, siga as diretrizes do projeto e as boas práticas de desenvolvimento estabelecidas pela equipe.</p>
 
 </body>
